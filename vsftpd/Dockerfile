@@ -15,7 +15,7 @@ RUN useradd -m ftpuser && echo "ftpuser:password" | chpasswd && \
     mkdir -p /home/ftpuser/ftp/files && \
     chown nobody:nogroup /home/ftpuser/ftp && \
     chmod a-w /home/ftpuser/ftp && \
-    chmod ftpuser:ftpuser /home/ftpuser/ftp/files
+    chown ftpuser:ftpuser /home/ftpuser/ftp/files
 
 # Expose FTP ports
 EXPOSE 20 21 21100-21110
