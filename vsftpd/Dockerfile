@@ -11,11 +11,11 @@ RUN apt update && \
 COPY  vsftpd.conf  /etc/vsftpd.conf
 
 # Create FTP user and home directory
-RUN useradd -m ftpuser && echo "ftpuser:password" | chpassword && \
+RUN useradd -m ftpuser && echo "ftpuser:password" | chpasswd && \
     mkdir -p /home/ftpuser/ftp/files && \
-    chown nobosy:nogroup /home/ftpuser/ftp && \
+    chown nobody:nogroup /home/ftpuser/ftp && \
     chmod a-w /home/ftpuser/ftp && \
-    chmod ftpuser:ftpuser /homr/ftpuser/ftp/files
+    chmod ftpuser:ftpuser /home/ftpuser/ftp/files
 
 # Expose FTP ports
 EXPOSE 20 21 21100-21110
