@@ -8,7 +8,7 @@ RUN apt update && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
-COPY ./index.html  /var/www/html/indexx.html
+COPY ./index.html  /var/www/html/index.html
 
 EXPOSE 80
 
